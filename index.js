@@ -17,9 +17,14 @@ app.use(express.static('build'))
 
 const url = process.env.MONGODB_URI
 
+app.get('/getRequests', (req, res) => {
+    Request.find({}).then(requests => {
+        res.json(requests)
+    })
+})
+
 app.post('/request', (req, res) => {
     const body = req.body
-
     const request = new Request({
         firstName: body.firstName,
         lastName: body.lastName,
