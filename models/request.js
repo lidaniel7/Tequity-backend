@@ -21,6 +21,7 @@ const requestSchema = new mongoose.Schema({
     cost: String,
     city: String,
     state: String,
+    originalState: String,
     country: String,
     email: String,
     number: String,
